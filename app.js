@@ -13,8 +13,8 @@ app.use(bodyParser.json());
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const db = require(".//models/index.js");
-db.sequelize.sync();
+const db = require("./models/index.js");
+db.sequelize.sync({force:true});
 db.sequelize
   .authenticate()
   .then(() => {
@@ -27,9 +27,10 @@ db.sequelize
 app.get("/", (req, res) => {
   res.json({ message: "Welcome to my application." });
 });
+app.use("/pastPapers",require("./routes/pastPapers.js"));
 app.use("/notes", require("./routes/document.js"));
 app.use("/subject", require("./routes/subject.js"));
-app.use("/user", require("./routes/user.js"));
+app.use("/login", require("./routes/user.js"));
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
