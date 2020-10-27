@@ -27,7 +27,9 @@ db.sequelize
 app.get("/", (req, res) => {
   res.json({ message: "Welcome to my application." });
 });
-
+app.use("/notes", require("./routes/document.js"));
+app.use("/subject", require("./routes/subject.js"));
+app.use("/user", require("./routes/user.js"));
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
