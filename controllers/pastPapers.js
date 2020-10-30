@@ -3,7 +3,8 @@ exports.getPastPapersBySubjectId = async(req,res)=>{
     try {
         const pastPapersCollection = await PastPapers.findAll({
             where:{
-                subjectId: req.body.subjectId
+                subjectId: req.body.subjectId,
+                isVerified:true
             }
         });
         res.status(200).send(pastPapersCollection);
