@@ -3,12 +3,12 @@ const {
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class Book extends Model {
+  class Slide extends Model {
     static associate(models) {
-     Book.belongsTo(models.Subject);
+     Slide.belongsTo(models.Subject);
     }
   };
-  Book.init({
+  Slide.init({
     id: {
       allowNull: false,
       autoIncrement: true,
@@ -30,7 +30,7 @@ module.exports = (sequelize, DataTypes) => {
     },
   }, {
     sequelize,
-    modelName: 'Book',
+    modelName: 'Slide',
   });
-  return Book;
+  return Slide;
 };

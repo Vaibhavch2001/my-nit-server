@@ -1,12 +1,12 @@
-const Book = require("../models/index").Book;
-exports.getBooksBySubjectId = async(req,res)=>{
+const PastPapers = require("../models/index").PastPapers;
+exports.getPastPapersBySubjectId = async(req,res)=>{
     try {
-        const booksCollection = await Book.findAll({
+        const pastPapersCollection = await PastPapers.findAll({
             where:{
                 subjectId: req.body.subjectId
             }
         });
-        res.status(200).send(booksCollection);
+        res.status(200).send(pastPapersCollection);
     } catch (e) {
         console.log(e)
       res.status(500).send(e)

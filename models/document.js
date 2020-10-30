@@ -21,6 +21,11 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
       type: DataTypes.INTEGER
     },
+    isVerified: {
+      allowNull: false,
+      type: DataTypes.INTEGER,
+      defaultValue:0
+    },
     name: {
         allowNull: false,
         type:DataTypes.STRING
