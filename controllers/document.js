@@ -3,7 +3,7 @@ exports.getDocumentsBySubjectId = async(req,res)=>{
     try {
         const documentsCollection = await Document.findAll({
             where:{
-                subjectId: req.body.subjectId,
+                SubjectId: req.body.SubjectId,
                 isVerified:true
             }
         });
@@ -15,7 +15,7 @@ exports.getDocumentsBySubjectId = async(req,res)=>{
 }
 exports.addDocument = async(req,res)=>{
     try {
-        const document = await Document.create({ subjectId: req.body.subjectId,name:req.body.name,link:req.body.link,isVerified:0});
+        const document = await Document.create({ SubjectId: req.body.SubjectId,name:req.body.name,link:req.body.link,isVerified:0});
         res.status(200).send(document);
     } catch (e) {
         res.status(500).send(e);

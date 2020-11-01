@@ -3,7 +3,7 @@ exports.getSlidesBySubjectId = async(req,res)=>{
     try {
         const slidesCollection = await Slide.findAll({
             where:{
-                subjectId: req.body.subjectId,
+                SubjectId: req.body.SubjectId,
                 isVerified:true
             }
         });
@@ -15,7 +15,7 @@ exports.getSlidesBySubjectId = async(req,res)=>{
 }
 exports.addSlide = async(req,res)=>{
     try {
-        const slide = await Slide.create({ subjectId: req.body.subjectId,name:req.body.name,link:req.body.link,isVerified:0});
+        const slide = await Slide.create({ SubjectId: req.body.SubjectId,name:req.body.name,link:req.body.link,isVerified:0});
         res.status(200).send(slide);
     } catch (e) {
         res.status(500).send(e);

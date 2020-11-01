@@ -3,7 +3,7 @@ exports.getPastPapersBySubjectId = async(req,res)=>{
     try {
         const pastPapersCollection = await PastPapers.findAll({
             where:{
-                subjectId: req.body.subjectId,
+                SubjectId: req.body.SubjectId,
                 isVerified:true
             }
         });
@@ -15,7 +15,7 @@ exports.getPastPapersBySubjectId = async(req,res)=>{
 }
 exports.addPastPapers = async(req,res)=>{
     try {
-        const pastPaper = await PastPapers.create({ subjectId: req.body.subjectId,name:req.body.name,link:req.body.link,isVerified:0});
+        const pastPaper = await PastPapers.create({ SubjectId: req.body.SubjectId,name:req.body.name,link:req.body.link,isVerified:0});
         res.status(200).send(pastPaper);
     } catch (e) {
         res.status(500).send(e);
