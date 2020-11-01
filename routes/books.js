@@ -1,9 +1,5 @@
 const router = require("express").Router();
-
-router.get(async function (req,res){
-    
-});
-router.post(async function(req,res){
-
-});
+const booksController = require('../controllers/books')
+router.post('/get',booksController.getBooksBySubjectId);
+router.post('/add',booksController.addBook);
 module.exports = router;

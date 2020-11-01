@@ -1,10 +1,6 @@
 const router = require("express").Router();
-const Document = require("../models/document");
-router.get(async function (req,res){
-
-});
-router.post(async function(req,res){
-
-});
+const controller = require('../controllers/document')
+router.post('/get',controller.getDocumentsBySubjectId);
+router.post('/add',controller.addDocument);
 module.exports = router;
 

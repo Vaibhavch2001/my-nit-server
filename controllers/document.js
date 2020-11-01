@@ -13,6 +13,14 @@ exports.getDocumentsBySubjectId = async(req,res)=>{
       res.status(500).send(e)
     }
 }
+exports.addDocument = async(req,res)=>{
+    try {
+        const document = await Document.create({ subjectId: req.body.subjectId,name:req.body.name,link:req.body.link,isVerified:0});
+        res.status(200).send(document);
+    } catch (e) {
+        res.status(500).send(e);
+    }
+}
 exports.add = (req,res)=>{
 
 }
