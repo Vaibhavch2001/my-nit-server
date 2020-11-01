@@ -29,8 +29,9 @@ app.get("/", (req, res) => {
 });
 app.use("/pastPapers",require("./routes/pastPapers.js"));
 app.use("/notes", require("./routes/document.js"));
-app.use("/subject", require("./routes/subject.js"));
+app.use("/subjects", require("./routes/subject.js"));
 app.use("/slides",require("./routes/slides.js"));
+app.use("/books",require("./routes/books.js"));
 app.use("/login", require("./routes/user.js"));
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
