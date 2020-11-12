@@ -22,3 +22,11 @@ exports.getSubjectsBySemesterAndBranch = async(req,res)=>{
       res.status(500).send(e);
     }
 }
+exports.addSubject= async(req,res)=>{
+    try {
+        const subject = await Subject.create({ semester: req.body.semester,name:req.body.name,branch:req.body.branch});
+        res.status(200).send(subject);
+    } catch (e) {
+        res.status(500).send(e);
+    }
+}
