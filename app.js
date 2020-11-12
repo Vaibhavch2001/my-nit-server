@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-
+require("dotenv").config();
 const app = express();
 
 
@@ -33,6 +33,7 @@ app.use("/subjects", require("./routes/subject.js"));
 app.use("/slides",require("./routes/slides.js"));
 app.use("/books",require("./routes/books.js"));
 app.use("/login", require("./routes/user.js"));
+
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
