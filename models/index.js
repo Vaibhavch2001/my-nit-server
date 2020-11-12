@@ -7,12 +7,12 @@ const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || 'development';
 const config = require(__dirname + '/../config/config.js')[env];
 const db = {};
-//
-DB_USERNAME=root
-DB_PASSWORD=12345678
-DB_NAME=mynit_test
-DB_HOST=localhost
-DIALECT=mysql
+// //
+// DB_USERNAME=root
+// DB_PASSWORD=12345678
+// DB_NAME=mynit_test
+// DB_HOST=localhost
+// DIALECT=mysql
 let sequelize;
   // sequelize = new Sequelize(config.database, config.username, config.password, config);
   sequelize = new Sequelize(process.env.DATABASE_URL);
