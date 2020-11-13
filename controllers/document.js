@@ -4,7 +4,7 @@ exports.getDocumentsBySubjectId = async(req,res)=>{
         const documentsCollection = await Document.findAll({
             where:{
                 SubjectId: req.body.SubjectId,
-                isVerified:true
+                isVerified:1
             }
         });
         res.status(200).send(documentsCollection);

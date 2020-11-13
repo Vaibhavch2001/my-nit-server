@@ -4,7 +4,7 @@ exports.getPastPapersBySubjectId = async(req,res)=>{
         const pastPapersCollection = await PastPapers.findAll({
             where:{
                 SubjectId: req.body.SubjectId,
-                isVerified:true
+                isVerified:1
             }
         });
         res.status(200).send(pastPapersCollection);

@@ -4,7 +4,7 @@ exports.getSlidesBySubjectId = async(req,res)=>{
         const slidesCollection = await Slide.findAll({
             where:{
                 SubjectId: req.body.SubjectId,
-                isVerified:true
+                isVerified:1
             }
         });
         res.status(200).send(slidesCollection);

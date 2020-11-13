@@ -4,7 +4,7 @@ exports.getBooksBySubjectId = async(req,res)=>{
         const booksCollection = await Book.findAll({
             where:{
                 SubjectId: req.body.SubjectId,
-                isVerified:true
+                isVerified:1
             }
         });
         res.status(200).send(booksCollection);
